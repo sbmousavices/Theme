@@ -362,7 +362,7 @@
         </div>
 
         <div class="plugins-grid">
-            <!-- ✅ THEME 001 CARD -->
+            <!-- ✅ THEME 001 CARD (PREMIUM) -->
             <div class="plugin-card">
                 <div class="plugin-image-wrapper">
                     <img src="https://sbmousavices.github.io/Theme/SBM_Theme_001.jpg" alt="SBM Theme 001 Preview" class="plugin-image">
@@ -370,11 +370,16 @@
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 001</div>
                     <div class="plugin-description">A professional dark-mode portfolio theme with gold accents. Perfect for developers looking for a modern, SEO-optimized look with responsive design.</div>
-                    <button onclick="downloadTheme('001')" class="btn-plugin"><i class="fas fa-download"></i> Download Theme</button>
+                    <!-- ✅ ADDED PRICE -->
+                    <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">5 USDT</div>
+                    <!-- ✅ CHANGED TO PURCHASE LINK -->
+                    <a href="https://sbmousavices.github.io/Industrial-Tools/#payment-section" class="btn-plugin">
+                        <i class="fas fa-shopping-cart"></i> Purchase
+                    </a>
                 </div>
             </div>
 
-            <!-- ✅ THEME 002 CARD (NEW) -->
+            <!-- ✅ THEME 002 CARD (FREE) -->
             <div class="plugin-card">
                 <div class="plugin-image-wrapper">
                     <img src="https://sbmousavices.github.io/Theme/SBM_Theme_002.jpg" alt="SBM Theme 002 Preview" class="plugin-image">
@@ -410,7 +415,7 @@
         </div>
     </div>
 
-    <!-- ✅ DIRECT DOWNLOAD SCRIPT FOR THEMES -->
+    <!-- ✅ DIRECT DOWNLOAD SCRIPT FOR FREE THEMES ONLY -->
     <script>
         async function downloadTheme(version) {
             const url = `https://sbmousavices.github.io/Theme/SBM_Theme_${version}.zip`;
