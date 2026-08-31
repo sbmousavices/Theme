@@ -370,7 +370,8 @@
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 001</div>
                     <div class="plugin-description">A professional dark-mode portfolio theme with gold accents. Perfect for developers looking for a modern, SEO-optimized look with responsive design.</div>
-                    <a href="#" class="btn-plugin">Download HD WebP</a>
+                    <!-- ✅ UPDATED DOWNLOAD BUTTON TEXT AND DIRECT DOWNLOAD SCRIPT -->
+                    <button onclick="downloadTheme()" class="btn-plugin"><i class="fas fa-download"></i> Download Theme</button>
                 </div>
             </div>
         </div>
@@ -397,6 +398,42 @@
             <button id="send-btn">Send</button>
         </div>
     </div>
+
+    <!-- ✅ DIRECT DOWNLOAD SCRIPT FOR THEME ZIP -->
+    <script>
+        async function downloadTheme() {
+            const url = 'https://sbmousavices.github.io/Theme/SBM_Theme_001.zip';
+            const filename = 'SBM_Theme_001.zip';
+            
+            try {
+                // Track download event if GoatCounter is available
+                if (window.goatcounter) {
+                    window.goatcounter.count({ path: '/theme-download', title: 'Downloaded: SBM Theme 001', event: true });
+                }
+
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const blob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = blobUrl;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                
+                // Cleanup
+                window.URL.revokeObjectURL(blobUrl);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Direct download failed, falling back to link:', error);
+                // Fallback: open in new tab if direct download fails
+                window.open(url, '_blank');
+            }
+        }
+    </script>
 
     <!-- Chatbot Script -->
     <script>
