@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ✅ SEO Meta Tags -->
+    <title>Premium Digital Assets & Web Solutions | Behzad Mousavi</title>
+    <meta name="description" content="Download professional free web themes, SEO-optimized templates, Excel macros, and exclusive web design resources curated for creators and developers.">
+    <meta name="keywords" content="Free WordPress Themes, Web Design, SEO Templates, HTML5 Templates, Excel Macros, VBA Scripts, Prompt Engineering, Behzad Mousavi, SBM Theme">
+    <meta name="author" content="Behzad Mousavi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sbmousavices.github.io/themes.html">
+
+    <!-- ✅ Open Graph / Social Media -->
+    <meta property="og:title" content="Premium Digital Assets & Web Solutions | Behzad Mousavi">
+    <meta property="og:description" content="Download professional free web themes, SEO templates, Excel macros, and exclusive web design resources.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sbmousavices.github.io/themes.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/sbmousavices/Industrial-Tools/main/Profile.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Premium Digital Assets & Web Solutions">
+    <meta name="twitter:description" content="Professional free themes, SEO templates, and Excel macros designed by Behzad Mousavi.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/sbmousavices/Industrial-Tools/main/Profile.jpg">
+
+    <!-- ✅ Theme Color & PWA -->
+    <meta name="theme-color" content="#d4af37">
+    <meta name="msapplication-TileColor" content="#d4af37">
+    <link rel="manifest" href="/Industrial-Tools/EnglishInfo.html/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/Industrial-Tools/icon-192.png">
+
+    <!-- ✅ Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ✅ Analytics -->
+    <script data-goatcounter="https://bmousavi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <style>
+        :root {
+            --bg-primary: #0a1628;
+            --bg-secondary: #0f1f38;
+            --bg-card: #132847;
+            --accent: #d4af37;
+            --accent-light: #f4d06f;
+            --text-primary: #e8eef7;
+            --text-secondary: #a0aec0;
+            --border: rgba(212, 175, 55, 0.2);
+            --gradient: linear-gradient(135deg, #d4af37 0%, #f4d06f 100%);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        .bg-shapes {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;
+        }
+        .bg-shapes::before, .bg-shapes::after {
+            content: ''; position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.15; animation: float 20s infinite ease-in-out;
+        }
+        .bg-shapes::before { width: 500px; height: 500px; background: var(--accent); top: -100px; right: -100px; }
+        .bg-shapes::after { width: 600px; height: 600px; background: #4a90e2; bottom: -200px; left: -200px; animation-delay: -10s; }
+        @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(50px, 50px) scale(1.1); } }
+
+        /* Navigation - Right Aligned Menu */
+        nav { 
+            position: fixed; top: 0; width: 100%; padding: 1rem 5%; 
+            background: rgba(10, 22, 40, 0.98); backdrop-filter: blur(15px); 
+            z-index: 1000; border-bottom: 1px solid var(--border); 
+        }
+        
+        .nav-container { 
+            max-width: 1600px; margin: 0 auto; 
+            display: flex; align-items: center; 
+        }
+        
+        .logo { 
+            font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; 
+            color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 12px;
+            margin-right: auto; 
+        }
+        .nav-logo-img {
+            width: 36px; height: 36px; border-radius: 50%; object-fit: cover;
+            border: 2px solid var(--accent); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .nav-links { 
+            display: flex; gap: 1.8rem; list-style: none; align-items: center; 
+            margin-right: 2rem; 
+        }
+        
+        .nav-links a { 
+            color: var(--text-primary); text-decoration: none; 
+            font-weight: 600; transition: color 0.3s; 
+            font-size: 1.1rem; letter-spacing: 0.5px;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+        .btn-signin {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 0.6rem 1.5rem; border: 1px solid var(--accent);
+            border-radius: 50px; color: var(--accent); text-decoration: none;
+            font-weight: 600; font-size: 1rem; transition: all 0.3s;
+            background: transparent; white-space: nowrap;
+        }
+        .btn-signin:hover {
+            background: var(--accent); color: var(--bg-primary);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ✅ OPENSEA STYLE BANNER BOX - EXACT MATCH TO NFT PAGE */
+        .banner-container {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .opensea-banner-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 1;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .banner-placeholder-text {
+            position: absolute;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* Hero Text Content Below Banner */
+        .hero-text-section {
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero-text-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+        .hero-text-section h1 span {
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-text-section p { font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; }
+
+        /* Main Content Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5% 4rem; }
+        
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-subtitle { color: var(--accent); font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1rem; }
+        .section-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-divider { width: 60px; height: 3px; background: var(--gradient); margin: 0 auto; border-radius: 2px; }
+
+        /* Plugins Grid - NFT Gallery Style */
+        .plugins-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+        
+        /* ✅ EXACT NFT CARD STRUCTURE FOR THEME BOX */
+        .plugin-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .plugin-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Square Image Wrapper (1:1 Aspect Ratio like NFT) */
+        .plugin-image-wrapper {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .plugin-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--bg-primary);
+            background: var(--gradient);
+        }
+
+        .plugin-card:hover .plugin-image {
+            transform: scale(1.05);
+        }
+
+        .card-info {
+            padding: 1.2rem;
+        }
+
+        .plugin-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem; /* Increased margin since ID is removed */
+            color: var(--text-primary);
+        }
+
+        .plugin-description {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .btn-plugin {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-plugin:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* Footer */
+        footer { background: var(--bg-secondary); padding: 2rem 5%; text-align: center; border-top: 1px solid var(--border); margin-top: 4rem; }
+        footer p { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* =============================================
+           ✅ CUSTOM CHATBOT STYLES - EXACT POSITION
+           ============================================= */
+        #custom-chat-wrapper {
+            position: fixed; top: 135px; left: 30px; z-index: 10000;
+            display: flex; align-items: center; gap: 12px; pointer-events: none;
+        }
+        #chat-toggle {
+            pointer-events: auto; padding: 10px 20px; background: var(--gradient);
+            color: var(--bg-primary); border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3); font-family: inherit;
+            font-weight: 600; font-size: 0.9rem; z-index: 10001; transition: transform 0.2s ease;
+        }
+        #chat-toggle:hover { transform: scale(1.05); }
+
+        #chat-box {
+            display: none; position: fixed; top: 185px; left: 30px; width: 320px; height: 450px;
+            background: white; border: 1px solid #e0e0e0; border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15); flex-direction: column;
+            font-family: 'Inter', Tahoma, Arial, sans-serif; z-index: 10002; overflow: hidden;
+        }
+        #chat-header {
+            padding: 15px; background: var(--bg-primary); color: var(--accent); font-weight: bold;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        #close-chat { background: none; border: none; color: var(--accent); font-size: 20px; cursor: pointer; }
+        #chat-messages { flex: 1; padding: 15px; overflow-y: auto; font-size: 14px; background: #f9f9f9; }
+        #chat-input-area { padding: 10px; border-top: 1px solid #eee; display: flex; gap: 8px; background: white; }
+        #user-input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; outline: none; color: #333; }
+        #send-btn { padding: 10px 16px; background: var(--accent); color: var(--bg-primary); border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+        
+        .msg-user { margin: 8px 0; text-align: right; }
+        .msg-user span { background: var(--accent); color: var(--bg-primary); padding: 8px 12px; border-radius: 12px 12px 0 12px; display: inline-block; max-width: 85%; }
+        .msg-bot { margin: 8px 0; text-align: left; }
+        .msg-bot span { background: #e9ecef; color: #333; padding: 8px 12px; border-radius: 12px 12px 12px 0; display: inline-block; max-width: 85%; }
+        .loading-msg { margin: 8px 0; text-align: left; color: #888; font-style: italic; font-size: 13px; }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .nav-links { gap: 1.2rem; }
+            .nav-links a { font-size: 1rem; }
+        }
+        @media (max-width: 968px) {
+            .nav-container { display: flex; justify-content: space-between; }
+            .nav-links { display: none; }
+            .opensea-banner-box { aspect-ratio: 16 / 9; }
+            #custom-chat-wrapper { top: 130px; left: 20px; }
+            #chat-box { width: calc(100% - 40px); left: 20px; top: 180px; height: 60vh; }
+            .plugins-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shapes"></div>
+
+    <!-- Navigation with Right-Aligned Menu -->
+    <nav>
+        <div class="nav-container">
+            <a href="https://sbmousavices.github.io/Industrial-Tools/EnglishInfo.html" class="logo">
+                <img src="https://sbmousavices.github.io/Industrial-Tools/icon-192.png" alt="BM Logo" class="nav-logo-img">
+                Home
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="https://sbmousavices.github.io/Industrial-Tools/EnglishInfo.html#about">About</a></li>
+                <li><a href="https://sbmousavices.github.io/Industrial-Tools/EnglishInfo.html#skills">Web Design</a></li>
+                <li><a href="https://sbmousavices.github.io/NFT/">NFT Gallery</a></li>
+                <li><a href="https://sbmousavices.github.io/Industrial-Tools/">Products</a></li>
+                <li><a href="https://sbmousavices.github.io/Articles/">Articles</a></li>
+                <li><a href="https://sbmousavices.github.io/Industrial-Tools/community.html">Community</a></li>
+                <li><a href="https://sbmousavices.github.io/Industrial-Tools/hub.html">Hub</a></li>
+                <li><a href="https://sbmousavices.github.io/Industrial-Tools/EnglishInfo.html#contact">Contact</a></li>
+            </ul>
+
+            <a href="#" class="btn-signin"><i class="fas fa-user"></i> Sign In</a>
+        </div>
+    </nav>
+
+    <!-- ✅ OPENSEA STYLE BANNER BOX (Exact Match) -->
+    <div class="banner-container">
+        <div class="opensea-banner-box">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&auto=format&fit=crop&q=60" alt="Premium Digital Assets Banner" class="banner-img">
+            <div class="banner-placeholder-text">Future Banner Design Area</div>
+        </div>
+    </div>
+
+    <!-- Hero Text Section - UPDATED TEXT -->
+    <section class="hero-text-section">
+        <h1>Premium <span>Digital Assets</span> & Web Solutions</h1>
+        <p>Discover high-quality free themes, professional SEO-optimized templates, and exclusive web design resources curated for creators. Elevate your online presence with expert prompt engineering, custom website banners, and advanced on-page SEO strategies tailored to boost your visibility and engagement, HTML & Web Components, Excel Macros & VBA.</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container">
+        <div class="section-header">
+            <p class="section-subtitle">Our Collection</p>
+            <h2 class="section-title">Explore Our <span>Resources</span></h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="plugins-grid">
+            <!-- Free Theme Card - EXACT NFT CARD STRUCTURE -->
+            <div class="plugin-card">
+                <div class="plugin-image-wrapper">
+                    <div class="plugin-image">
+                        <i class="fas fa-layer-group"></i>
+                        <!-- Future: Replace icon with <img src="theme-preview.jpg" alt="SBM Theme 001" class="plugin-image"> -->
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="plugin-name">SBM Theme 001</div>
+                    <div class="plugin-description">A professional dark-mode portfolio theme with gold accents. Perfect for developers looking for a modern, SEO-optimized look with responsive design.</div>
+                    <a href="#" class="btn-plugin">Download HD WebP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Behzad Mousavi. All Rights Reserved. | Professional Digital Solutions</p>
+    </footer>
+
+    <!-- ✅ CUSTOM CHATBOT INTERFACE -->
+    <div id="custom-chat-wrapper">
+        <button id="chat-toggle"> Chat</button>
+    </div>
+
+    <div id="chat-box">
+        <div id="chat-header">
+            <span>AI Assistant</span>
+            <button id="close-chat">&times;</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Type your question..." autocomplete="off">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Script -->
+    <script>
+    const WORKER_URL = 'https://late-moon-4f8a.sbmousavi-ces.workers.dev/';
+    const toggleBtn = document.getElementById('chat-toggle');
+    const closeBtn = document.getElementById('close-chat');
+    const chatBox = document.getElementById('chat-box');
+    const sendBtn = document.getElementById('send-btn');
+    const userInput = document.getElementById('user-input');
+    const messagesDiv = document.getElementById('chat-messages');
+
+    toggleBtn.addEventListener('click', () => {
+        chatBox.style.display = 'flex';
+        toggleBtn.style.display = 'none';
+        userInput.focus();
+    });
+
+    closeBtn.addEventListener('click', () => {
+        chatBox.style.display = 'none';
+        toggleBtn.style.display = 'block';
+    });
+
+    sendBtn.addEventListener('click', sendMessage);
+    userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+    async function sendMessage() {
+        const message = userInput.value.trim();
+        if (!message) return;
+
+        messagesDiv.innerHTML += `<div class="msg-user"><span>${escapeHtml(message)}</span></div>`;
+        userInput.value = '';
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+        const loadingId = 'loading-' + Date.now();
+        messagesDiv.innerHTML += `<div id="${loadingId}" class="loading-msg">Thinking...</div>`;
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+        try {
+            const response = await fetch(WORKER_URL, {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message })
+            });
+            const data = await response.json();
+            document.getElementById(loadingId).remove();
+            const replyText = data.reply || 'Sorry, I could not process that request.';
+            messagesDiv.innerHTML += `<div class="msg-bot"><span>${escapeHtml(replyText)}</span></div>`;
+        } catch (error) {
+            document.getElementById(loadingId).remove();
+            messagesDiv.innerHTML += `<div class="msg-bot"><span style="color:red;">Connection error. Please try again.</span></div>`;
+        }
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    function escapeHtml(text) {
+        const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+    </script>
+</body>
+</html>
