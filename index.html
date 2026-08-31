@@ -362,7 +362,7 @@
         </div>
 
         <div class="plugins-grid">
-            <!-- ✅ BOTTOM THEME CARD WITH IMAGE (ABSOLUTE PATH) -->
+            <!-- ✅ THEME 001 CARD -->
             <div class="plugin-card">
                 <div class="plugin-image-wrapper">
                     <img src="https://sbmousavices.github.io/Theme/SBM_Theme_001.jpg" alt="SBM Theme 001 Preview" class="plugin-image">
@@ -370,8 +370,19 @@
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 001</div>
                     <div class="plugin-description">A professional dark-mode portfolio theme with gold accents. Perfect for developers looking for a modern, SEO-optimized look with responsive design.</div>
-                    <!-- ✅ UPDATED DOWNLOAD BUTTON TEXT AND DIRECT DOWNLOAD SCRIPT -->
-                    <button onclick="downloadTheme()" class="btn-plugin"><i class="fas fa-download"></i> Download Theme</button>
+                    <button onclick="downloadTheme('001')" class="btn-plugin"><i class="fas fa-download"></i> Download Theme</button>
+                </div>
+            </div>
+
+            <!-- ✅ THEME 002 CARD (NEW) -->
+            <div class="plugin-card">
+                <div class="plugin-image-wrapper">
+                    <img src="https://sbmousavices.github.io/Theme/SBM_Theme_002.jpg" alt="SBM Theme 002 Preview" class="plugin-image">
+                </div>
+                <div class="card-info">
+                    <div class="plugin-name">SBM Theme 002</div>
+                    <div class="plugin-description">A futuristic glassmorphism template with neon cyan and purple accents. Features animated backgrounds, glowing effects, and modern UI cards.</div>
+                    <button onclick="downloadTheme('002')" class="btn-plugin"><i class="fas fa-download"></i> Download Theme</button>
                 </div>
             </div>
         </div>
@@ -399,16 +410,16 @@
         </div>
     </div>
 
-    <!-- ✅ DIRECT DOWNLOAD SCRIPT FOR THEME ZIP -->
+    <!-- ✅ DIRECT DOWNLOAD SCRIPT FOR THEMES -->
     <script>
-        async function downloadTheme() {
-            const url = 'https://sbmousavices.github.io/Theme/SBM_Theme_001.zip';
-            const filename = 'SBM_Theme_001.zip';
+        async function downloadTheme(version) {
+            const url = `https://sbmousavices.github.io/Theme/SBM_Theme_${version}.zip`;
+            const filename = `SBM_Theme_${version}.zip`;
             
             try {
                 // Track download event if GoatCounter is available
                 if (window.goatcounter) {
-                    window.goatcounter.count({ path: '/theme-download', title: 'Downloaded: SBM Theme 001', event: true });
+                    window.goatcounter.count({ path: `/theme-${version}-download`, title: `Downloaded: SBM Theme ${version}`, event: true });
                 }
 
                 const response = await fetch(url);
