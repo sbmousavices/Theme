@@ -126,7 +126,7 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
-        /* ✅ OPENSEA STYLE BANNER BOX */
+        /* ✅ TOP BANNER SLIDER STYLES */
         .banner-container {
             max-width: 1200px;
             margin: 2rem auto 0;
@@ -137,22 +137,30 @@
         .opensea-banner-box {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9; /* ✅ Increased height (was 3 / 1) */
+            aspect-ratio: 16 / 9; 
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--border);
             box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
             background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .banner-img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* ✅ Shows the entire image without cropping/zooming */
+            object-fit: contain; 
             display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 0;
+        }
+
+        .banner-img.active {
+            opacity: 1;
+            z-index: 1;
         }
 
         /* Hero Text Content Below Banner */
@@ -250,7 +258,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            min-height: 44px; /* ✅ Forces exact same height for both buttons */
+            min-height: 44px; 
             padding: 0.7rem 1rem;
             background: transparent;
             border: 1px solid var(--accent);
@@ -322,7 +330,7 @@
         @media (max-width: 968px) {
             .nav-container { display: flex; justify-content: space-between; }
             .nav-links { display: none; }
-            .opensea-banner-box { aspect-ratio: 4 / 3; } /* ✅ Even taller on mobile for full visibility */
+            .opensea-banner-box { aspect-ratio: 4 / 3; } 
             #custom-chat-wrapper { top: 130px; left: 20px; }
             #chat-box { width: calc(100% - 40px); left: 20px; top: 180px; height: 60vh; }
             .plugins-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
@@ -355,10 +363,14 @@
         </div>
     </nav>
 
-    <!-- ✅ TOP BANNER IMAGE (ABSOLUTE PATH) -->
+    <!-- ✅ TOP BANNER SLIDER (5 IMAGES) -->
     <div class="banner-container">
         <div class="opensea-banner-box">
-            <img src="https://sbmousavices.github.io/Theme/Banner.jpg" alt="Premium Digital Assets Banner" class="banner-img">
+            <img src="https://sbmousavices.github.io/Theme/Banner.jpg" alt="Premium Digital Assets Banner" class="banner-img active">
+            <img src="https://sbmousavices.github.io/Theme/Banner02.jpg" alt="Web Design Workspace" class="banner-img">
+            <img src="https://sbmousavices.github.io/Theme/Banner03.jpg" alt="SEO & AI Analytics" class="banner-img">
+            <img src="https://sbmousavices.github.io/Theme/Banner04.jpg" alt="Prompt Engineering" class="banner-img">
+            <img src="https://sbmousavices.github.io/Theme/Banner05.jpg" alt="VBA Macros & Automation" class="banner-img">
         </div>
     </div>
 
@@ -460,6 +472,23 @@
                 window.open(url, '_blank');
             }
         }
+    </script>
+
+    <!-- ✅ BANNER SLIDER LOGIC (5 SECONDS INTERVAL) -->
+    <script>
+        const banners = document.querySelectorAll('.banner-img');
+        let currentBanner = 0;
+        const totalBanners = banners.length;
+        const slideInterval = 5000; // 5 seconds
+
+        function nextBanner() {
+            banners[currentBanner].classList.remove('active');
+            currentBanner = (currentBanner + 1) % totalBanners;
+            banners[currentBanner].classList.add('active');
+        }
+
+        // Start the automatic slider
+        setInterval(nextBanner, slideInterval);
     </script>
 
     <!-- Chatbot Script -->
