@@ -126,7 +126,7 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
-        /* ✅ OPENSEA STYLE BANNER BOX - EXACT MATCH TO NFT PAGE */
+        /* ✅ OPENSEA STYLE BANNER BOX */
         .banner-container {
             max-width: 1200px;
             margin: 2rem auto 0;
@@ -137,7 +137,7 @@
         .opensea-banner-box {
             position: relative;
             width: 100%;
-            aspect-ratio: 3 / 1;
+            aspect-ratio: 16 / 9; /* ✅ Increased height (was 3 / 1) */
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid var(--border);
@@ -151,7 +151,7 @@
         .banner-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* ✅ Shows the entire image without cropping/zooming */
             display: block;
         }
 
@@ -191,6 +191,9 @@
             border-radius: 12px;
             overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .plugin-card:hover {
@@ -205,6 +208,7 @@
             aspect-ratio: 1 / 1;
             overflow: hidden;
             background: #000;
+            flex-shrink: 0;
         }
 
         .plugin-image {
@@ -220,6 +224,9 @@
 
         .card-info {
             padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .plugin-name {
@@ -234,12 +241,17 @@
             color: var(--text-secondary);
             margin-bottom: 1.2rem;
             line-height: 1.5;
+            flex-grow: 1;
         }
 
+        /* ✅ UNIFIED BUTTON STYLING FOR EXACT SAME HEIGHT */
         .btn-plugin {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            padding: 0.7rem;
+            min-height: 44px; /* ✅ Forces exact same height for both buttons */
+            padding: 0.7rem 1rem;
             background: transparent;
             border: 1px solid var(--accent);
             color: var(--accent);
@@ -248,8 +260,11 @@
             border-radius: 8px;
             font-weight: 600;
             font-size: 0.9rem;
+            line-height: 1;
             transition: all 0.3s ease;
             cursor: pointer;
+            margin-top: auto;
+            box-sizing: border-box;
         }
 
         .btn-plugin:hover {
@@ -307,7 +322,7 @@
         @media (max-width: 968px) {
             .nav-container { display: flex; justify-content: space-between; }
             .nav-links { display: none; }
-            .opensea-banner-box { aspect-ratio: 16 / 9; }
+            .opensea-banner-box { aspect-ratio: 4 / 3; } /* ✅ Even taller on mobile for full visibility */
             #custom-chat-wrapper { top: 130px; left: 20px; }
             #chat-box { width: calc(100% - 40px); left: 20px; top: 180px; height: 60vh; }
             .plugins-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
@@ -370,9 +385,7 @@
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 001</div>
                     <div class="plugin-description">A professional dark-mode portfolio theme with gold accents. Perfect for developers looking for a modern, SEO-optimized look with responsive design.</div>
-                    <!-- ✅ ADDED PRICE -->
                     <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">5 USDT</div>
-                    <!-- ✅ CHANGED TO PURCHASE LINK -->
                     <a href="https://sbmousavices.github.io/Industrial-Tools/#payment-section" class="btn-plugin">
                         <i class="fas fa-shopping-cart"></i> Purchase
                     </a>
@@ -387,7 +400,8 @@
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 002</div>
                     <div class="plugin-description">A futuristic glassmorphism template with neon cyan and purple accents. Features animated backgrounds, glowing effects, and modern UI cards.</div>
-                    <button onclick="downloadTheme('002')" class="btn-plugin"><i class="fas fa-download"></i> Download Theme</button>
+                    <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Free</div>
+                    <button onclick="downloadTheme('002')" class="btn-plugin"><i class="fas fa-download"></i> Download</button>
                 </div>
             </div>
         </div>
@@ -422,7 +436,6 @@
             const filename = `SBM_Theme_${version}.zip`;
             
             try {
-                // Track download event if GoatCounter is available
                 if (window.goatcounter) {
                     window.goatcounter.count({ path: `/theme-${version}-download`, title: `Downloaded: SBM Theme ${version}`, event: true });
                 }
@@ -440,12 +453,10 @@
                 document.body.appendChild(a);
                 a.click();
                 
-                // Cleanup
                 window.URL.revokeObjectURL(blobUrl);
                 document.body.removeChild(a);
             } catch (error) {
                 console.error('Direct download failed, falling back to link:', error);
-                // Fallback: open in new tab if direct download fails
                 window.open(url, '_blank');
             }
         }
