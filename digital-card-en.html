@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behzad Mousavi | Industrial Project Planner & Web Developer</title>
+    
+    <!-- ✅ SEO & OPEN GRAPH META TAGS -->
+    <meta name="description" content="Digital Business Card of Behzad Mousavi. Professional project management tools, web themes, and educational content.">
+    <meta property="og:title" content="Behzad Mousavi | Digital Card">
+    <meta property="og:description" content="Quick access to paid planning tools, free resume builder, and professional web themes.">
+    <meta property="og:image" content="https://sbmousavices.github.io/Industrial-Tools/Profile.jpg">
+    <meta property="og:url" content="https://sbmousavices.github.io/digital-card-en.html">
+    <meta property="og:type" content="profile">
+    
+    <!-- ✅ SCHEMA MARKUP FOR PERSON -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Behzad Mousavi",
+      "jobTitle": "Industrial Project Planner & Web Developer",
+      "url": "https://sbmousavices.github.io/digital-card-en.html",
+      "sameAs": [
+        "https://www.instagram.com/industrial.planning.tools",
+        "https://github.com/sbmousavices",
+        "https://t.me/PlanningUser",
+        "https://www.reddit.com/user/planninguser",
+        "https://medium.com/@sbmousavi"
+      ]
+    }
+    </script>
+
+    <!-- ✅ FONTS & ICONS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-primary: #0a1628;
+            --accent: #d4af37;
+            --accent-light: #f4d06f;
+            --text-primary: #e8eef7;
+            --text-secondary: #a0aec0;
+            --card-bg: rgba(15, 31, 56, 0.8);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: radial-gradient(circle at top right, rgba(212, 175, 55, 0.1), transparent 40%);
+        }
+
+        .digital-card {
+            width: 100%;
+            max-width: 380px;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* ✅ HEADER LAYOUT: PHOTO LEFT - LOGO RIGHT */
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 0 5px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .profile-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        h1 { font-size: 1.4rem; font-weight: 800; margin-bottom: 2px; }
+        .job-title { color: var(--accent-light); font-size: 0.85rem; margin-bottom: 12px; }
+        .bio { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px; padding: 0 5px; }
+
+        /* Action Buttons - More Compact */
+        .links-container { display: flex; flex-direction: column; gap: 10px; }
+        
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.25);
+        }
+
+        /* ✅ PREMIUM BUTTON STYLE FOR PLANNING TOOLS */
+        .premium-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d06f 100%);
+            color: #0a1628 !important;
+            border: none;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-btn:hover {
+            background: linear-gradient(135deg, #f4d06f 0%, #d4af37 100%);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            background: #e74c3c;
+            color: white;
+            font-size: 0.6rem;
+            padding: 10px 20px;
+            transform: rotate(-45deg);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .action-btn i { font-size: 1.1rem; }
+
+        /* ✅ INTERNAL CONTACT FORM STYLES (FORMSUBMIT.CO) */
+        .contact-form {
+            margin-top: 10px;
+            padding: 16px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--accent-light);
+            margin-bottom: 6px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover { color: var(--accent); }
+
+        .footer-note {
+            margin-top: 16px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="digital-card">
+        
+        <!-- ✅ SWAPPED HEADER: PHOTO LEFT - LOGO RIGHT -->
+        <div class="header-flex">
+            <img src="https://sbmousavices.github.io/Industrial-Tools/Profile.jpg" alt="Behzad Mousavi" class="profile-img">
+            <img src="https://sbmousavices.github.io/Industrial-Tools/icon-192.png" alt="BM Planning Logo" class="brand-logo">
+        </div>
+        
+        <!-- Identity -->
+        <h1>Behzad Mousavi</h1>
+        <p class="job-title">Industrial Project Planner | Web Developer</p>
+        <p class="bio">
+            Providing specialized project management tools, professional web themes, and a free resume builder for engineers and designers.
+        </p>
+
+        <!-- Main Action Links -->
+        <div class="links-container">
+            
+            <!-- ✅ PRIMARY INCOME BUTTON -->
+            <a href="https://sbmousavices.github.io/Industrial-Tools/" class="action-btn premium-btn">
+                <span class="premium-badge">PRO</span>
+                <i class="fas fa-chart-line"></i>
+                Planning Tools (Store)
+            </a>
+
+            <!-- ✅ ARTICLES DOWNLOAD BUTTON -->
+            <a href="https://sbmousavices.github.io/Articles/" class="action-btn">
+                <i class="fas fa-newspaper"></i>
+                Articles & Tutorials
+            </a>
+            
+            <a href="https://sbmousavices.github.io/Resume/Resume_Builder_English.html" class="action-btn">
+                <i class="fas fa-file-alt"></i>
+                Build Professional Resume (Free)
+            </a>
+            
+            <a href="https://sbmousavices.github.io/Theme/index.html" class="action-btn">
+                <i class="fas fa-palette"></i>
+                Download Free Web Themes
+            </a>
+
+            <a href="https://sbmousavices.github.io/NFT/" class="action-btn">
+                <i class="fas fa-image"></i>
+                NFT Gallery
+            </a>
+        </div>
+
+        <!-- ✅ CONTACT FORM (FORMSUBMIT.CO) -->
+        <div class="contact-form">
+            <label><i class="fas fa-paper-plane"></i> Send Direct Message</label>
+            <form action="https://formsubmit.co/sbmousavi@proton.me" method="POST">
+                <input type="hidden" name="_next" value="https://sbmousavices.github.io/digital-card-en.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New message from Digital Card (EN)">
+                <input type="email" name="email" placeholder="Your Email (for reply)" required>
+                <textarea name="message" placeholder="Message or collaboration request..." required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- ✅ SOCIAL MEDIA LINKS -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com/industrial.planning.tools" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/sbmousavices" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://t.me/PlanningUser" target="_blank" class="social-link" title="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.reddit.com/user/planninguser" target="_blank" class="social-link" title="Reddit"><i class="fab fa-reddit"></i></a>
+            <a href="https://www.youtube.com/@PM.Center" target="_blank" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://medium.com/@sbmousavi" target="_blank" class="social-link" title="Medium"><i class="fab fa-medium"></i></a>
+            <a href="https://facebook.com/planninguser" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <p class="footer-note">© 2026 Behzad Mousavi. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>
