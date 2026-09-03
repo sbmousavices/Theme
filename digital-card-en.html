@@ -70,6 +70,7 @@
             padding: 24px 20px;
             text-align: center;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
 
         /* ✅ HEADER LAYOUT: PHOTO LEFT - LOGO RIGHT */
@@ -228,7 +229,7 @@
             transform: translateY(-2px);
         }
 
-        /* ✅ NEW FOOTER LAYOUT: SOCIAL LEFT - QR RIGHT */
+        /* ✅ FINAL FOOTER: ICONS LEFT - QR RIGHT (FIXED OVERFLOW & POSITION) */
         .footer-divider {
             margin-top: 24px;
             padding-top: 16px;
@@ -244,30 +245,30 @@
 
         .social-icons {
             display: flex;
-            gap: 10px; /* Slightly reduced gap to fit all 7 icons */
-            justify-content: flex-start;
-            flex-wrap: wrap; /* Allows wrapping on very small screens */
+            gap: 10px;
+            justify-content: flex-start; /* Icons aligned to LEFT */
         }
 
         .social-link {
             color: var(--text-secondary);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             transition: color 0.3s;
+            padding: 2px;
         }
 
         .social-link:hover { color: var(--accent); }
 
         .qr-code-box {
-            width: 64px;
+            width: 64px; /* Optimized size to prevent overflow */
             height: 64px;
             background: white;
             border-radius: 8px;
-            padding: 4px;
+            padding: 3px;
             border: 2px solid var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0; /* Prevents QR from shrinking */
+            flex-shrink: 0;
         }
 
         .qr-code-box img {
@@ -345,10 +346,10 @@
             </form>
         </div>
 
-        <!-- ✅ NEW COMPACT FOOTER WITH ALL SOCIAL ICONS + QR CODE -->
+        <!-- ✅ FINAL FOOTER: ICONS LEFT, QR RIGHT -->
         <div class="footer-divider">
             <div class="footer-row">
-                <!-- Social Icons on the Left (All 7 included) -->
+                <!-- Social Icons FIRST in HTML -> Appears on LEFT in LTR -->
                 <div class="social-icons">
                     <a href="https://www.instagram.com/industrial.planning.tools" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://github.com/sbmousavices" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
@@ -359,7 +360,7 @@
                     <a href="https://facebook.com/planninguser" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
                 </div>
 
-                <!-- QR Code on the Right -->
+                <!-- QR Code SECOND in HTML -> Appears on RIGHT in LTR -->
                 <div class="qr-code-box">
                     <img src="https://sbmousavices.github.io/Theme/qr-en.png" alt="Scan Digital Card">
                 </div>
