@@ -26,7 +26,9 @@
         "https://github.com/sbmousavices",
         "https://t.me/PlanningUser",
         "https://www.reddit.com/user/planninguser",
-        "https://medium.com/@sbmousavi"
+        "https://medium.com/@sbmousavi",
+        "https://www.youtube.com/@PM.Center",
+        "https://facebook.com/planninguser"
       ]
     }
     </script>
@@ -226,27 +228,55 @@
             transform: translateY(-2px);
         }
 
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 20px;
+        /* ✅ NEW FOOTER LAYOUT: SOCIAL LEFT - QR RIGHT */
+        .footer-divider {
+            margin-top: 24px;
             padding-top: 16px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            flex-wrap: wrap;
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px; /* Slightly reduced gap to fit all 7 icons */
+            justify-content: flex-start;
+            flex-wrap: wrap; /* Allows wrapping on very small screens */
         }
 
         .social-link {
             color: var(--text-secondary);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             transition: color 0.3s;
         }
 
         .social-link:hover { color: var(--accent); }
 
+        .qr-code-box {
+            width: 64px;
+            height: 64px;
+            background: white;
+            border-radius: 8px;
+            padding: 4px;
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0; /* Prevents QR from shrinking */
+        }
+
+        .qr-code-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         .footer-note {
-            margin-top: 16px;
             font-size: 0.7rem;
             color: var(--text-muted);
             opacity: 0.6;
@@ -257,7 +287,7 @@
 
     <div class="digital-card">
         
-        <!-- ✅ SWAPPED HEADER: PHOTO LEFT - LOGO RIGHT -->
+        <!-- ✅ HEADER: PHOTO LEFT - LOGO RIGHT -->
         <div class="header-flex">
             <img src="https://sbmousavices.github.io/Industrial-Tools/Profile.jpg" alt="Behzad Mousavi" class="profile-img">
             <img src="https://sbmousavices.github.io/Industrial-Tools/icon-192.png" alt="BM Planning Logo" class="brand-logo">
@@ -315,18 +345,29 @@
             </form>
         </div>
 
-        <!-- ✅ SOCIAL MEDIA LINKS -->
-        <div class="social-icons">
-            <a href="https://www.instagram.com/industrial.planning.tools" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/sbmousavices" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://t.me/PlanningUser" target="_blank" class="social-link" title="Telegram"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.reddit.com/user/planninguser" target="_blank" class="social-link" title="Reddit"><i class="fab fa-reddit"></i></a>
-            <a href="https://www.youtube.com/@PM.Center" target="_blank" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://medium.com/@sbmousavi" target="_blank" class="social-link" title="Medium"><i class="fab fa-medium"></i></a>
-            <a href="https://facebook.com/planninguser" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <!-- ✅ NEW COMPACT FOOTER WITH ALL SOCIAL ICONS + QR CODE -->
+        <div class="footer-divider">
+            <div class="footer-row">
+                <!-- Social Icons on the Left (All 7 included) -->
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/industrial.planning.tools" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/sbmousavices" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/PlanningUser" target="_blank" class="social-link" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.reddit.com/user/planninguser" target="_blank" class="social-link" title="Reddit"><i class="fab fa-reddit"></i></a>
+                    <a href="https://www.youtube.com/@PM.Center" target="_blank" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://medium.com/@sbmousavi" target="_blank" class="social-link" title="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="https://facebook.com/planninguser" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+
+                <!-- QR Code on the Right -->
+                <div class="qr-code-box">
+                    <img src="https://sbmousavices.github.io/Theme/qr-en.png" alt="Scan Digital Card">
+                </div>
+            </div>
+            
+            <p class="footer-note">© 2026 Behzad Mousavi. All Rights Reserved.</p>
         </div>
 
-        <p class="footer-note">© 2026 Behzad Mousavi. All Rights Reserved.</p>
     </div>
 
 </body>
