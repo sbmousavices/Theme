@@ -331,14 +331,29 @@
             flex-grow: 1;
         }
 
-        /* ✅ UNIFIED BUTTON STYLING FOR EXACT SAME HEIGHT */
+        .product-id {
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-family: monospace;
+            opacity: 0.8;
+        }
+
+        /* ✅ DUAL BUTTON CONTAINER */
+        .button-group {
+            display: flex;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        /* ✅ UNIFIED BUTTON STYLING */
         .btn-plugin {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             min-height: 44px; 
-            padding: 0.7rem 1rem;
+            padding: 0.7rem 0.5rem;
             background: transparent;
             border: 1px solid var(--accent);
             color: var(--accent);
@@ -346,17 +361,76 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1;
             transition: all 0.3s ease;
             cursor: pointer;
-            margin-top: auto;
             box-sizing: border-box;
         }
 
         .btn-plugin:hover {
             background: var(--accent);
             color: var(--bg-primary);
+        }
+
+        .btn-complete {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--accent-light);
+            color: var(--accent-light);
+        }
+        .btn-complete:hover {
+            background: var(--accent-light);
+            color: var(--bg-primary);
+        }
+
+        /* ✅ CONTACT FORM STYLES (MATCHING PRODUCTS PAGE) */
+        .contact-section {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+        .contact-form label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--accent-light);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.1);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -489,7 +563,7 @@
                     <div class="plugin-name">AI Prompt Engineering Codex</div>
                     <div class="plugin-description">A comprehensive technical handbook covering latent space, tokenization logic, optical physics, and semantic weighting for professionals.</div>
                     <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Read Guide</div>
-                    <span class="btn-plugin">
+                    <span class="btn-plugin" style="width: 100%;">
                         <i class="fas fa-book-open"></i> Start Learning
                     </span>
                 </div>
@@ -502,11 +576,18 @@
                 </div>
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 001</div>
+                    <div class="product-id">ID: TM-GOLD-001</div>
                     <div class="plugin-description">A professional dark-mode portfolio theme with gold accents. Perfect for developers looking for a modern, SEO-optimized look with responsive design.</div>
                     <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">20 USDT</div>
-                    <a href="https://sbmousavices.github.io/Industrial-Tools/#payment-section" class="btn-plugin">
-                        <i class="fas fa-shopping-cart"></i> Purchase
-                    </a>
+                    
+                    <div class="button-group">
+                        <a href="https://nowpayments.io/payment/?iid=5925070270&paymentId=5552467406" target="_blank" class="btn-plugin" onclick="fillProductCode('TM-GOLD-001')">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </a>
+                        <button onclick="scrollToOrder()" class="btn-plugin btn-complete">
+                            <i class="fas fa-check-circle"></i> Complete Order
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -519,7 +600,7 @@
                     <div class="plugin-name">SBM Theme 002</div>
                     <div class="plugin-description">A futuristic glassmorphism template with neon cyan and purple accents. Features animated backgrounds, glowing effects, and modern UI cards.</div>
                     <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Free</div>
-                    <button onclick="downloadTheme('002')" class="btn-plugin"><i class="fas fa-download"></i> Download</button>
+                    <button onclick="downloadTheme('002')" class="btn-plugin" style="width: 100%;"><i class="fas fa-download"></i> Download</button>
                 </div>
             </div>
 
@@ -530,11 +611,18 @@
                 </div>
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 003</div>
+                    <div class="product-id">ID: TM-ECOM-003</div>
                     <div class="plugin-description">A premium e-commerce focused theme designed for digital asset stores. Includes product grids, countdown timers, and WooCommerce compatibility.</div>
                     <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">20 USDT</div>
-                    <a href="https://sbmousavices.github.io/Industrial-Tools/#payment-section" class="btn-plugin">
-                        <i class="fas fa-shopping-cart"></i> Purchase
-                    </a>
+                    
+                    <div class="button-group">
+                        <a href="https://nowpayments.io/payment/?iid=5177294061&paymentId=5594654181" target="_blank" class="btn-plugin" onclick="fillProductCode('TM-ECOM-003')">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </a>
+                        <button onclick="scrollToOrder()" class="btn-plugin btn-complete">
+                            <i class="fas fa-check-circle"></i> Complete Order
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -545,13 +633,48 @@
                 </div>
                 <div class="card-info">
                     <div class="plugin-name">SBM Theme 004</div>
+                    <div class="product-id">ID: TM-CORP-004</div>
                     <div class="plugin-description">A sleek, corporate-themed template optimized for business websites and agencies. Features clean typography, service sections, and contact forms.</div>
                     <div style="color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">20 USDT</div>
-                    <a href="https://sbmousavices.github.io/Industrial-Tools/#payment-section" class="btn-plugin">
-                        <i class="fas fa-shopping-cart"></i> Purchase
-                    </a>
+                    
+                    <div class="button-group">
+                        <a href="https://nowpayments.io/payment/?iid=5762729967&paymentId=5981398422" target="_blank" class="btn-plugin" onclick="fillProductCode('TM-CORP-004')">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </a>
+                        <button onclick="scrollToOrder()" class="btn-plugin btn-complete">
+                            <i class="fas fa-check-circle"></i> Complete Order
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- ✅ SECURE DELIVERY FORM (MANUAL VERIFICATION) -->
+        <div id="order-form-section" class="contact-section reveal">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2 class="section-title" style="font-size: 1.8rem;">Complete Your <span>Order</span></h2>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">After payment, fill out this form with your transaction hash to receive your theme file via email.</p>
+            </div>
+            
+            <form action="https://formsubmit.co/sbmousavi@proton.me" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="https://sbmousavices.github.io/Theme/index.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Theme Purchase - Verification Required">
+
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <label>Email Address (for delivery)</label>
+                <input type="email" name="email" placeholder="Your Email" required>
+
+                <label>Product Code (Auto-filled on purchase click)</label>
+                <input type="text" id="themeProductCode" name="product_code" placeholder="e.g., TM-GOLD-001" readonly style="cursor: not-allowed; opacity: 0.8;">
+
+                <label>Transaction Hash / Description</label>
+                <textarea name="message" placeholder="Paste your TX Hash here..." required style="min-height: 80px; resize: vertical;"></textarea>
+
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Proof of Payment</button>
+            </form>
         </div>
     </section>
 
@@ -581,6 +704,20 @@
 
     <!-- ✅ DIRECT DOWNLOAD SCRIPT FOR FREE THEMES ONLY -->
     <script>
+        // ✅ AUTO-FILL PRODUCT CODE FUNCTION
+        function fillProductCode(code) {
+            const input = document.getElementById('themeProductCode');
+            if (input) input.value = code;
+        }
+
+        // ✅ SCROLL TO ORDER FORM FUNCTION
+        function scrollToOrder() {
+            const formSection = document.getElementById('order-form-section');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
         async function downloadTheme(version) {
             const url = `https://sbmousavices.github.io/Theme/SBM_Theme_${version}.zip`;
             const filename = `SBM_Theme_${version}.zip`;
