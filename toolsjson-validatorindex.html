@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ✅ SEO Meta Tags -->
+    <title>Free Online JSON Validator & Formatter | Behzad Mousavi</title>
+    <meta name="description" content="Validate, format, and minify JSON data instantly with this free, fast, and secure online developer tool. No data leaves your browser.">
+    <meta name="keywords" content="JSON Validator, JSON Formatter, Minify JSON, Developer Tools, Behzad Mousavi, Free Web Tools">
+    <meta name="author" content="Behzad Mousavi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sbmousavices.github.io/Theme/tools/json-validator.html">
+
+    <!-- ✅ Open Graph / Social Media -->
+    <meta property="og:title" content="Free Online JSON Validator & Formatter">
+    <meta property="og:description" content="Validate, format, and minify JSON data instantly. Secure and free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sbmousavices.github.io/Theme/tools/json-validator.html">
+    <meta property="og:image" content="https://sbmousavices.github.io/Theme/Banner.jpg">
+
+    <!-- ✅ Theme Color & PWA -->
+    <meta name="theme-color" content="#d4af37">
+    <link rel="manifest" href="https://sbmousavices.github.io/Industrial-Tools/EnglishInfo.html/manifest.json">
+
+    <!-- ✅ Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ✅ Analytics -->
+    <script data-goatcounter="https://bmousavi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <style>
+        /* ✅ EXACT VARIABLES FROM YOUR TEMPLATE */
+        :root {
+            --bg-primary: #0a1628;
+            --bg-secondary: #0f1f38;
+            --bg-card: #132847;
+            --accent: #d4af37;
+            --accent-light: #f4d06f;
+            --text-primary: #e8eef7;
+            --text-secondary: #a0aec0;
+            --text-muted: #94a3b8;
+            --border: rgba(212, 175, 55, 0.2);
+            --gradient: linear-gradient(135deg, #d4af37 0%, #f4d06f 100%);
+            --nav-height: 70px;
+            --nav-bg: rgba(10, 10, 12, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            padding-top: var(--nav-height);
+        }
+
+        /* ✅ UNIFIED NAVIGATION (Copied from your template) */
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+            background: var(--nav-bg); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border); z-index: 1000;
+            display: flex; align-items: center; justify-content: space-between; padding: 0 5%;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--accent); font-weight: 700; font-size: 1.2rem; }
+        .nav-logo img { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--accent); }
+        .nav-links { display: flex; gap: 0.8rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        .btn-signin { display: inline-flex; align-items: center; gap: 8px; padding: 0.6rem 1.5rem; border: 1px solid var(--accent); border-radius: 50px; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; }
+        .btn-signin:hover { background: var(--accent); color: var(--bg-primary); box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+
+        /* ✅ BACKGROUND ANIMATION */
+        .bg-shapes { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        .bg-shapes::before, .bg-shapes::after { content: ''; position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.15; animation: float 20s infinite ease-in-out; }
+        .bg-shapes::before { width: 500px; height: 500px; background: var(--accent); top: -100px; right: -100px; }
+        .bg-shapes::after { width: 600px; height: 600px; background: #4a90e2; bottom: -200px; left: -200px; animation-delay: -10s; }
+        @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(50px, 50px) scale(1.1); } }
+
+        /* ✅ FLOATING BACK BUTTON */
+        .floating-back-btn {
+            position: fixed; top: calc(var(--nav-height) + 15px); right: 5%; z-index: 999;
+            display: inline-flex; align-items: center; gap: 8px; padding: 0.5rem 1.2rem;
+            background: rgba(10, 22, 40, 0.8); backdrop-filter: blur(8px);
+            border: 1px solid var(--accent); border-radius: 50px; color: var(--accent);
+            text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s ease;
+        }
+        .floating-back-btn:hover { background: var(--accent); color: var(--bg-primary); transform: translateY(-2px); }
+
+        /* ✅ TOOL SPECIFIC STYLES */
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 5% 4rem; }
+        .section-header { text-align: center; margin-bottom: 2rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1rem; }
+        .section-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-divider { width: 60px; height: 3px; background: var(--gradient); margin: 0 auto; border-radius: 2px; }
+
+        .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        @media (max-width: 768px) { .editor-grid { grid-template-columns: 1fr; } }
+
+        .editor-box label { display: block; font-size: 0.9rem; color: var(--accent-light); margin-bottom: 8px; font-weight: 600; }
+        .editor-box textarea {
+            width: 100%; min-height: 400px; padding: 16px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text-primary);
+            font-family: 'Courier New', monospace; font-size: 14px;
+            resize: vertical; transition: border-color 0.3s;
+        }
+        .editor-box textarea:focus { outline: none; border-color: var(--accent); }
+
+        .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .btn-tool {
+            padding: 12px 24px; border: 1px solid var(--accent); border-radius: 8px;
+            font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s;
+            background: transparent; color: var(--accent); display: flex; align-items: center; gap: 8px;
+        }
+        .btn-tool:hover { background: var(--accent); color: var(--bg-primary); }
+        .btn-tool.primary { background: var(--gradient); color: var(--bg-primary); border: none; font-weight: 700; }
+        .btn-tool.primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); }
+
+        .status { padding: 16px; border-radius: 8px; text-align: center; font-weight: 600; display: none; }
+        .status.success { background: rgba(46, 204, 113, 0.1); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.3); }
+        .status.error { background: rgba(231, 76, 60, 0.1); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.3); }
+
+        footer { background: var(--bg-secondary); padding: 2rem 5%; text-align: center; border-top: 1px solid var(--border); margin-top: 4rem; }
+        footer p { color: var(--text-secondary); font-size: 0.9rem; }
+
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .floating-back-btn { right: 20px; top: calc(var(--nav-height) + 10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-shapes"></div>
+
+    <a href="https://sbmousavices.github.io/Theme/index.html" class="floating-back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <nav>
+        <a href="https://sbmousavices.github.io/Industrial-Tools/EnglishInfo.html" class="nav-logo">
+            <img src="https://sbmousavices.github.io/Industrial-Tools/icon-192.png" alt="BM Planning Logo">
+            <span>Home</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="https://sbmousavices.github.io/Resume/Resume_Builder_English.html">Resume Builder</a></li>
+            <li><a href="https://sbmousavices.github.io/Theme/index.html" class="active">Web Design</a></li>
+            <li><a href="https://sbmousavices.github.io/NFT/">NFT Gallery</a></li>
+            <li><a href="https://sbmousavices.github.io/Industrial-Tools/">Products</a></li>
+            <li><a href="https://sbmousavices.github.io/Articles/">Articles</a></li>
+            <li><a href="https://sbmousavices.github.io/Community-Hub/hub.html">Hub</a></li>
+            <li><a href="https://sbmousavices.github.io/Industrial-Tools/EnglishInfo.html" class="btn-signin"><i class="fas fa-user"></i> Sign In</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">JSON <span>Validator</span> & Formatter</h2>
+            <div class="section-divider"></div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">Validate, format, and minify your JSON data instantly. 100% client-side, your data never leaves your browser.</p>
+        </div>
+
+        <div class="editor-grid">
+            <div class="editor-box">
+                <label><i class="fas fa-file-code"></i> Input JSON</label>
+                <textarea id="input" placeholder='{"name": "Behzad", "role": "Developer"}'></textarea>
+            </div>
+            <div class="editor-box">
+                <label><i class="fas fa-check-circle"></i> Formatted Output</label>
+                <textarea id="output" readonly></textarea>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn-tool primary" onclick="validateAndFormat()"><i class="fas fa-magic"></i> Validate & Format</button>
+            <button class="btn-tool" onclick="minify()"><i class="fas fa-compress-alt"></i> Minify</button>
+            <button class="btn-tool" onclick="clearAll()"><i class="fas fa-trash"></i> Clear</button>
+            <button class="btn-tool" onclick="copyOutput()"><i class="fas fa-copy"></i> Copy Output</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Behzad Mousavi. All Rights Reserved. | Professional Digital Solutions</p>
+    </footer>
+
+    <script>
+        function validateAndFormat() {
+            const input = document.getElementById('input').value.trim();
+            const output = document.getElementById('output');
+            const status = document.getElementById('status');
+
+            if (!input) { showStatus('Please enter some JSON data first.', 'error'); return; }
+
+            try {
+                const parsed = JSON.parse(input);
+                output.value = JSON.stringify(parsed, null, 4);
+                showStatus('✅ Valid JSON! Successfully formatted.', 'success');
+            } catch (error) {
+                output.value = '';
+                showStatus('❌ Invalid JSON: ' + error.message, 'error');
+            }
+        }
+
+        function minify() {
+            const input = document.getElementById('input').value.trim();
+            const output = document.getElementById('output');
+            if (!input) { showStatus('Please enter some JSON data first.', 'error'); return; }
+            try {
+                output.value = JSON.stringify(JSON.parse(input));
+                showStatus('✅ JSON successfully minified.', 'success');
+            } catch (error) {
+                showStatus('❌ Invalid JSON: ' + error.message, 'error');
+            }
+        }
+
+        function clearAll() {
+            document.getElementById('input').value = '';
+            document.getElementById('output').value = '';
+            document.getElementById('status').style.display = 'none';
+        }
+
+        function copyOutput() {
+            const output = document.getElementById('output');
+            if (!output.value) { showStatus('Nothing to copy!', 'error'); return; }
+            navigator.clipboard.writeText(output.value).then(() => {
+                showStatus('✅ Output copied to clipboard!', 'success');
+            });
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = 'status ' + type;
+            status.style.display = 'block';
+            setTimeout(() => { status.style.display = 'none'; }, 4000);
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'var(--nav-bg)';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '20px';
+                navLinks.style.borderBottom = '1px solid var(--border)';
+            }
+        }
+    </script>
+</body>
+</html>
