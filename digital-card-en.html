@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://sbmousavices.github.io/Theme/digital-card-en.html">
     <meta property="og:type" content="profile">
     
-    <!-- ✅ SCHEMA MARKUP FOR PERSON -->
+    <!-- ✅ SCHEMA MARKUP FOR PERSON (LinkedIn Added for SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -22,6 +22,7 @@
       "jobTitle": "Industrial Project Planner & Web Developer",
       "url": "https://sbmousavices.github.io/Theme/digital-card-en.html",
       "sameAs": [
+        "https://www.linkedin.com/in/behzad-mousavi-42634511a",
         "https://www.instagram.com/industrial.planning.tools",
         "https://github.com/sbmousavices",
         "https://t.me/PlanningUser",
@@ -247,16 +248,20 @@
             display: flex;
             gap: 10px;
             justify-content: flex-start; /* Icons aligned to LEFT */
+            flex-wrap: wrap; /* Added to prevent overflow on very small screens */
         }
 
         .social-link {
             color: var(--text-secondary);
             font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
             padding: 2px;
         }
 
-        .social-link:hover { color: var(--accent); }
+        .social-link:hover { 
+            color: var(--accent); 
+            transform: translateY(-2px); /* Added subtle lift on hover */
+        }
 
         .qr-code-box {
             width: 64px; /* Optimized size to prevent overflow */
@@ -279,8 +284,9 @@
 
         .footer-note {
             font-size: 0.7rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             opacity: 0.6;
+            margin-top: 8px;
         }
     </style>
 </head>
@@ -351,13 +357,17 @@
             <div class="footer-row">
                 <!-- Social Icons FIRST in HTML -> Appears on LEFT in LTR -->
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/industrial.planning.tools" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/sbmousavices" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://t.me/PlanningUser" target="_blank" class="social-link" title="Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.reddit.com/user/planninguser" target="_blank" class="social-link" title="Reddit"><i class="fab fa-reddit"></i></a>
-                    <a href="https://www.youtube.com/@PM.Center" target="_blank" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://medium.com/@sbmousavi" target="_blank" class="social-link" title="Medium"><i class="fab fa-medium"></i></a>
-                    <a href="https://facebook.com/planninguser" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <!-- ✅ LINKEDIN ADDED HERE (First position for professional prominence) -->
+                    <a href="https://www.linkedin.com/in/behzad-mousavi-42634511a" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/industrial.planning.tools" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/sbmousavices" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/PlanningUser" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.reddit.com/user/planninguser" target="_blank" rel="noopener noreferrer" class="social-link" title="Reddit"><i class="fab fa-reddit"></i></a>
+                    <a href="https://www.youtube.com/@PM.Center" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://medium.com/@sbmousavi" target="_blank" rel="noopener noreferrer" class="social-link" title="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="https://facebook.com/planninguser" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
                 </div>
 
                 <!-- QR Code SECOND in HTML -> Appears on RIGHT in LTR -->
